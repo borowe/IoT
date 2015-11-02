@@ -56,6 +56,10 @@ io.on('connection', function(socket) {
 	  console.log('Here is the data from the file: ' + data);
 	  });  // --readfile
 
+      // send event back to clients
+      io.emit('sendback', lcdmsg);
+      console.log('sent sendback via ioemit', lcdmsg);
+
       // Send GET request to LCD
       var options = {
 	  host: '50.159.64.235',
@@ -84,7 +88,7 @@ io.on('connection', function(socket) {
 	      console.log(e.stack);
 	      }).end();
 
-
+     
   });  //socket.on lcdmsg
 
 }); // io.on connection

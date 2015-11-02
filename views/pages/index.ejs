@@ -56,11 +56,14 @@
  
   $('form').submit(function(){
   socket.emit('lcdsend', $('#lcdmsg').val());
-  $('#msg').append('<tr><td>' + $('#lcdmsg').val() + '</td></tr>');
+  //$('#msg').append('<tr><td>' + $('#lcdmsg').val() + '</td></tr>');
   $('#lcdmsg').val('');
   return false;
   });
 
+  socket.on('sendback', function(msg) {
+    $('#msg').prepend('<tr><td>' + msg + '</td></tr>');
+  });
 
 </script>
 </body>
