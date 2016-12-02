@@ -1,8 +1,6 @@
 {
-  "name": "Node.js Getting Started",
+  "name": "Buyboxi Container Pellet Proof of Concept",
   "description": "A barebones Node.js app using Express 4",
-  "repository": "https://github.com/heroku/node-js-getting-started",
-  "logo": "http://node-js-sample.herokuapp.com/node.svg",
-  "keywords": ["node", "express", "static"],
-  "image": "heroku/nodejs"
+  "repository": "https://github.com/borowe",
+  "keywords": ["node", "express", "esp8266", "iot"]
 }

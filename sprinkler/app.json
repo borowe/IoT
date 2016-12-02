@@ -1,0 +1,6 @@
+{
+  "name": "IOT solenoid valve sprinkler",
+  "description": "A simple web app allowing you to control a solenoid valve attached to a sprinkler.",
+  "repository": "https://github.com/borowe/IoTsprinkler",
+  "keywords": ["node", "IoT", "Arduino", "esp8266", "socket.io"]
+}

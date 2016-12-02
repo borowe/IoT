@@ -1,7 +1,7 @@
 {
-  "name": "node-js-getting-started",
-  "version": "0.1.5",
-  "description": "A sample Node.js app using Express 4",
+  "name": "Buyboxi Pellet Proof of Concept",
+  "version": "0.1",
+  "description": "A simple app that updates with contents of a containers level",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -16,12 +16,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": "https://github.com/borowe/iot2"
   },
   "keywords": [
     "node",
     "heroku",
-    "express"
-  ],
-  "license": "MIT"
+    "express",
+    "iot",
+    "esp8266"
+  ]
 }

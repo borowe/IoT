@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/header.ejs %>
+</head>
+
+<body>
+  <% include ../partials/nav.ejs %>
+  <div class="jumbotron text-center">
+    <div class="container">
+      <h2>And Bob said, "Let there be WATER!"</h2>
+      <br>
+      <span>The sprinkler status is...</span>
+      <div class="status"></div>
+      <hr>
+    </div>
+  </div>
+
+<center>
+  <div id="ons" class="btn btn-success">On</div>
+  <div id="offs" class="btn btn-danger">Off</div>
+  <p>Click the buttons above to turn the sprinkler on or off</p>
+</center>
+
+
+<script>
+  function changeWidth(){
+    var mybar = document.getElementById("pbar");
+    mybar.style.width = "5%";
+  }
+</script>
+
+<script>
+$(#ons).click(function() {
+  $(#status).html('Sprinker is ON');
+});
+
+$(#offs).click(function() {
+  $(#status).html('Sprinkler is OFF');
+});
+
+
+<!-- socket.io time -->
+<!--<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script> -->
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io();
+ 
+  socket.on('updateLevel', function(data) {
+    var autobar = document.getElementById("pbar");
+    autobar.style.width = data + "%";
+  $('#fillDesc').html((data).toFixed(1) + '% Full');
+  });
+
+</script>
+</body>
+</html>
