@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/header.ejs %>
+</head>
+
+<body>
+
+  <% include ../partials/nav.ejs %>
+
+<div class="jumbotron text-center">
+  <div class="container">
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/gmrXiwWc8Cs" frameborder="0" allowfullscreen></iframe>
+    <h2>Holy Smokes... the IoT has Arrived!</h2>
+    <p>Enter text below and hit GO! to send a message to my LCD.  I'll make sure to read all the profanity you send over and tweet the best of it.</p>
+
+<div class="col-md-12">
+<form action="">
+  <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <div class="input-group">
+	<input id="lcdmsg" type="text" class="form-control" maxlength="16" placeholder="Write to LCD">
+	<span class="input-group-btn">
+          <button class="btn btn-default" type="submit">Go!</button>
+	</span>
+      </div><!-- /input-group -->
+    </div><!-- /.col-md-4 -->
+    <div class="col-md-4"></div>
+</form>
+    </div>
+<span>Built with love using: ESP8266, Arduino IDE, Node.js, Socket.io, Amazon EC2, Heroku.</span>
+  </div>
+</div>
+
+<div class="container">
+<div class="col-md-4"></div>
+<div class="col-md-4">
+<div class="panel panel-default">
+    <table class = "table table-striped table-hover">
+      <thead>
+	<tr><th>Hit me with your best shot.</th></tr>
+      </thead>
+      <tbody id="msg"></tbody>
+    </table>
+</div>
+<div class="col-md-4"></div>
+</div> <!-- panel -->
+</div> <!-- container -->
+
+
+<!-- socket.io time -->
+<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+<!-- <script src="http://code.jquery.com/jquery-1.11.1.js"></script> -->
+<script>
+  var socket = io();
+ 
+  $('form').submit(function(){
+  socket.emit('lcdsend', $('#lcdmsg').val());
+  //$('#msg').append('<tr><td>' + $('#lcdmsg').val() + '</td></tr>');
+  $('#lcdmsg').val('');
+  return false;
+  });
+
+  socket.on('sendback', function(msg) {
+    $('#msg').prepend('<tr><td>' + msg + '</td></tr>');
+  });
+
+</script>
+</body>
+</html>
