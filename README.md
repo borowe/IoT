@@ -1,15 +1,9 @@
-# IoT Web form to LCD
+# IoT - This repo holds all, err some, of my IoT Projects
 
-A simple web app that monitors the level of contents in a container.
+ERRMAHGERD ser merch perjercts!
 
-## Built Using
-ESP8266 Adafruit Huzzah Board - Wifi dev board
-Arduino IDE
-Node.js
-Socket.io
-HC-SR04 Ultrasonic Sensor
+web2lcd - Write messages to a wireless lcd from a webpage
 
+sprinkler - controll your sprinklers from a webpage
 
-## Built on, deployed through
-Amazon EC2
-Heroku
+buyboxiPellet - measure a containers contents and dynamically update a webpage

@@ -1,6 +1,6 @@
-# IoT Web form to LCD
+# buyboxiPellet
 
-A simple web app that monitors the level of contents in a container.
+buyboxiPellet is a hardware device that you can put inside of a container to measure the level of the contents.  The device sends back readings to a webpage that updates in realtime.
 
 ## Built Using
 ESP8266 Adafruit Huzzah Board - Wifi dev board
